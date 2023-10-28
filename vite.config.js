@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // base: '/',
+  base: '/enflujo-miradas/',
   server: {
     port: 3000,
   },
