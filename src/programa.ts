@@ -11,8 +11,8 @@ let imgActual: HTMLImageElement;
 const cuadricula = {
   ancho: 0,
   alto: 0,
-  cols: 7,
-  rows: 5,
+  columnas: 7,
+  filas: 5,
   x: 0,
   y: 0,
   fotograma: { ancho: 0, alto: 0 },
@@ -59,8 +59,8 @@ cuadricula.y = 2;
 function inicio() {
   cuadricula.ancho = imgActual.naturalWidth;
   cuadricula.alto = imgActual.naturalHeight;
-  cuadricula.fotograma.ancho = (cuadricula.ancho / cuadricula.cols) | 0;
-  cuadricula.fotograma.alto = (cuadricula.alto / cuadricula.rows) | 0;
+  cuadricula.fotograma.ancho = (cuadricula.ancho / cuadricula.columnas) | 0;
+  cuadricula.fotograma.alto = (cuadricula.alto / cuadricula.filas) | 0;
   cuadricula.centro.x = (cuadricula.fotograma.ancho / 2) | 0;
   cuadricula.centro.y = (cuadricula.fotograma.alto / 2) | 0;
 
@@ -73,15 +73,15 @@ function escalar() {
   centro.x = (ancho / 2) | 0;
   centro.y = (alto / 2) | 0;
 
-  fotograma.ancho = (ancho / cuadricula.cols) | 0;
-  fotograma.alto = (alto / cuadricula.rows) | 0;
+  fotograma.ancho = (ancho / cuadricula.columnas) | 0;
+  fotograma.alto = (alto / cuadricula.filas) | 0;
 
   pintar();
 }
 
 function pintar() {
   ctx.drawImage(
-    imgActual, // image
+    imgActual,
     cuadricula.x * cuadricula.fotograma.ancho,
     cuadricula.y * cuadricula.fotograma.alto,
     cuadricula.fotograma.ancho,
@@ -94,10 +94,9 @@ function pintar() {
 }
 
 lienzo.onmousemove = (event) => {
-  console.log('hey');
   if (cargando) return;
-  cuadricula.x = ((event.clientX / ancho) * cuadricula.cols) | 0;
-  cuadricula.y = ((event.clientY / alto) * cuadricula.rows) | 0;
+  cuadricula.x = ((event.clientX / ancho) * cuadricula.columnas) | 0;
+  cuadricula.y = ((event.clientY / alto) * cuadricula.filas) | 0;
 
   pintar();
 };
