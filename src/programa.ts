@@ -21,9 +21,9 @@ const cuadricula = {
 
 const animaciones = [
   { nombre: 'Juanjo', fuente: 'calabaza.jpg', fondo: '#FFF', img: new Image() },
-  { nombre: 'Karol #1', fuente: 'Gatete.png', fondo: '#000', img: new Image() },
-  { nombre: 'Karol #2', fuente: 'Gateto.png', fondo: '#000', img: new Image() },
-  { nombre: 'Nelson', fuente: 'nelson.png', fondo: '#FFF', img: new Image() },
+  { nombre: 'Karol #1', fuente: 'Gatete.jpg', fondo: '#000', img: new Image() },
+  { nombre: 'Karol #2', fuente: 'Gateto.jpg', fondo: '#000', img: new Image() },
+  { nombre: 'Nelson', fuente: 'nelson.jpg', fondo: '#FFF', img: new Image() },
 ];
 
 animaciones.forEach((animacion) => {
