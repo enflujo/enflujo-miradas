@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #30cac073;
+  color: #130808;
+}
+
+canvas {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  vertical-align: top;
+  z-index: 1;
+}
+
+body {
+  // background-color: black;
+}
+
+#animaciones {
+  z-index: 9;
+  background-color: #9ec4b2;
+  color: rgb(34, 32, 32);
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em;
+
+  .animacion {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    border: 1px solid transparent;
+    padding: 0.3em;
+
+    &:hover,
+    &.activo {
+      border: 1px dotted;
+    }
+  }
+}
