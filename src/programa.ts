@@ -20,10 +20,12 @@ const cuadricula = {
 };
 
 const animaciones = [
-  { nombre: 'Juanjo', fuente: 'calabaza.jpg', fondo: '#FFF', img: new Image() },
-  { nombre: 'Karol #1', fuente: 'Gatete.jpg', fondo: '#000', img: new Image() },
-  { nombre: 'Karol #2', fuente: 'Gateto.jpg', fondo: '#000', img: new Image() },
-  { nombre: 'Nelson', fuente: 'nelson.jpg', fondo: '#FFF', img: new Image() },
+  { nombre: 'Juan José Vergara', fuente: 'calabaza.jpg', fondo: '#FFF', img: new Image() },
+  { nombre: 'Karol Escobar #1', fuente: 'Gatete.jpg', fondo: '#000', img: new Image() },
+  { nombre: 'Karol Escobar #2', fuente: 'Gateto.jpg', fondo: '#000', img: new Image() },
+  { nombre: 'Nelson Ojeda', fuente: 'nelson.jpg', fondo: '#FFF', img: new Image() },
+  { nombre: 'Laura Muñoz', fuente: 'laura-munoz.jpg', fondo: '#FFF', img: new Image() },
+  { nombre: 'Sebastian Ariza', fuente: 'Samurai.jpg', fondo: '#FFF', img: new Image() },
 ];
 
 animaciones.forEach((animacion) => {
