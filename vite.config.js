@@ -11,12 +11,13 @@ export default defineConfig({
     outDir: 'publico',
     assetsDir: 'estaticos',
     sourcemap: true,
-  },
-  rollupOptions: {
-    input: {
-      main: resolve(__dirname, 'index.html'),
-      raton: resolve(__dirname, 'raton/index.html'),
-      linterna: resolve(__dirname, 'linterna/index.html'),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        raton: resolve(__dirname, 'raton/index.html'),
+        linterna: resolve(__dirname, 'linterna/index.html'),
+      },
     },
   },
 });
