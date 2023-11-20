@@ -33,7 +33,7 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn build
-      - name: 🐝 Congigurar página de GitHub
+      - name: 🐝 Configurar página de GitHub
         uses: actions/configure-pages@v3
       - name: 🦅 Enviar archivos
         uses: actions/upload-pages-artifact@v2

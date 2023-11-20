@@ -1,5 +1,6 @@
-import './scss/estilos.scss';
+import './estilos.scss';
 
+const base = '/enflujo-miradas/miradas';
 const contenedorAnimaciones = document.getElementById('animaciones') as HTMLDivElement;
 const lienzo = document.getElementById('lienzo') as HTMLCanvasElement;
 const ctx = lienzo.getContext('2d') as CanvasRenderingContext2D;
@@ -18,17 +19,17 @@ const cuadricula = {
   fotograma: { ancho: 0, alto: 0 },
   centro: { x: 0, y: 0 },
 };
-
+`${base}/`;
 const animaciones = [
-  { nombre: 'Juan José Vergara', fuente: 'calabaza.jpg', fondo: '#FFF', img: new Image() },
-  { nombre: 'Karol Escobar #1', fuente: 'Gatete.jpg', fondo: '#000', img: new Image() },
-  { nombre: 'Karol Escobar #2', fuente: 'Gateto.jpg', fondo: '#000', img: new Image() },
-  { nombre: 'Nelson Ojeda', fuente: 'nelson.jpg', fondo: '#FFF', img: new Image() },
-  { nombre: 'Laura Muñoz', fuente: 'laura-munoz.jpg', fondo: '#FFF', img: new Image() },
-  { nombre: 'Sebastian Ariza', fuente: 'Samurai.jpg', fondo: '#FFF', img: new Image() },
+  { nombre: 'Juan José Vergara', fuente: `${base}/calabaza.jpg`, fondo: '#FFF', img: new Image() },
+  { nombre: 'Karol Escobar #1', fuente: `${base}/Gatete.jpg`, fondo: '#000', img: new Image() },
+  { nombre: 'Karol Escobar #2', fuente: `${base}/Gateto.jpg`, fondo: '#000', img: new Image() },
+  { nombre: 'Nelson Ojeda', fuente: `${base}/nelson.jpg`, fondo: '#FFF', img: new Image() },
+  { nombre: 'Laura Muñoz', fuente: `${base}/laura-munoz.jpg`, fondo: '#FFF', img: new Image() },
+  { nombre: 'Sebastian Ariza', fuente: `${base}/Samurai.jpg`, fondo: '#FFF', img: new Image() },
 ];
 
-animaciones.forEach((animacion) => {
+animaciones.forEach((animacion, i) => {
   cargando = true;
   const boton = document.createElement('div');
   boton.innerText = animacion.nombre;
@@ -47,8 +48,13 @@ animaciones.forEach((animacion) => {
     animacion.img.src = animacion.fuente;
     document.body.style.backgroundColor = animacion.fondo;
     imgActual = animacion.img;
-    cargando = false;
+
+    console.log('hola', cargando);
   };
+
+  if (i === 0) {
+    boton.dispatchEvent(new Event('click'));
+  }
 
   contenedorAnimaciones.appendChild(boton);
 });
@@ -59,6 +65,7 @@ cuadricula.x = 3;
 cuadricula.y = 2;
 
 function inicio() {
+  cargando = false;
   cuadricula.ancho = imgActual.naturalWidth;
   cuadricula.alto = imgActual.naturalHeight;
   cuadricula.fotograma.ancho = (cuadricula.ancho / cuadricula.columnas) | 0;

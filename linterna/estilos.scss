@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #30cac073;
+  color: #130808;
+}
+
+canvas {
+  position: absolute;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  top: 0;
+  left: 0;
+}
+
+#lienzo {
+  width: 100vw;
+  height: 100vh;
+}
+
+video {
+  display: none;
+  transform : scaleX(-1);
+}
